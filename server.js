@@ -11,4 +11,5 @@ mongoose.connect(process.env.DATABASE, {
     useCreateIndex: true
 })
 
-app.listen(3000, () => console.log('App is running on Port'));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log('App is running on Port'));
