@@ -1,4 +1,5 @@
 const express = require('express');
+const compression = require('compression');
 const app = express(); // function on calling will add a lot of actions
 const emailRouter = require('./routes/emailRouter');
 
