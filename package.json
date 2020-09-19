@@ -15,7 +15,7 @@
     "mongoose": "^5.10.5",
     "nodemailer": "^6.4.11"
   },
-  "emgines": {
+  "engines": {
     "node": ">=10.0.0"
   }
 }
