@@ -1,8 +1,9 @@
 const Email = require('../models/emailModel.js');
 const sendEmail = require('../utils/email.js');
+const catchAsync = require('./../utils/catchAsync');
 
-exports.writeEmail = async (req, res) => {
-    try{
+
+exports.writeEmail = catchAsync(async (req, res, next) => {
         const newEmail = await Email.create(req.body);
 
         await sendEmail(req.body);
@@ -12,10 +13,5 @@ exports.writeEmail = async (req, res) => {
                 email: newEmail
             }
         })
-    } catch(err){
-        res.status(400).json({
-            status: 'fail',
-            error: err
-        })
-    }
-}
+})
+
