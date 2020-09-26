@@ -1,14 +1,15 @@
 const express = require('express');
+const cors = require('cors');
 const app = express(); // function on calling will add a lot of actions
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const emailRouter = require('./routes/emailRouter');
 
 app.use(express.json()); // req.body could be usable
-app.use(function(req, res, next){
-    res.header("Access-Control-Allow-Origin", "http://localhost:8080"); // update to match the domain you will make the request from
-    next();
-})
+app.use(cors({
+    origin: 'http://localhost:8080',
+    optionsSuccessStatus: 200
+}))
 
 app.use('/api', emailRouter);
 app.all('*', (req, res, next) => {
