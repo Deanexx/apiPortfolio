@@ -7,7 +7,7 @@ const emailRouter = require('./routes/emailRouter');
 
 app.use(express.json()); // req.body could be usable
 app.use(cors({
-    origin: 'http://localhost:8080',
+    origin: 'http://www.eldartailov.com',
     optionsSuccessStatus: 200
 }))
 
