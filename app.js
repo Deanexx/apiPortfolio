@@ -7,7 +7,7 @@ const emailRouter = require('./routes/emailRouter');
 
 app.use(express.json()); // req.body could be usable
 app.use(cors({
-    origin: 'http://www.eldartailov.com',
+    origin: 'http://eldartailov.surge.sh',
     optionsSuccessStatus: 200
 }))
 
